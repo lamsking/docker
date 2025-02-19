@@ -7,7 +7,7 @@
 Vagrant.configure("2") do |config|
     config.vm.define "docker" do |docker|
       docker.vm.box = "almalinux/8"
-      docker.vm.network "private_network", type: "dhcp"
+      docker.vm.network "private_network", type: "static", ip:"192.168.56.100"
       docker.vm.hostname = "docker"
       docker.vm.provider "virtualbox" do |v|
         v.name = "docker"
